@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#7c5cf5">
+<link rel="manifest" href="manifest.json">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<title>Oylik kirim-chiqim</title>
+<link rel="icon" href="data:image/webp;base64,UklGRsARAABXRUJQVlA4ILQRAAAQSwCdASqgAKAAPlEijUSjoiEWuh2oOAUEswN8c8P1qz5Advaoy6mfmvwd+UnTXna7Q/0/3efNP/k+sT9R/873Df7X/Zf1s6/XmP/az1Zv9F+0nvD/wHqD/zj/Udad/aP+H7FX8g/wH//9dz2cf3R/cz2tcHzbP7KvveQ7E4+Y/nCMxYm4Ze1HoF+4v2XwM9VaUhyzPtH/K9gj+df5H0VNFP1b7Cf84/vnWZ9FJG9viegfatix4JV2vPi1sytb5VgsRx/CkXlFi4BLow5rWzQGCuF/Oc96KeFjwsYNXwc5OOLtmZTrhFufi/kJ0KT1of2fn3L4HH42RtRdgGqWREp9h+GpP5XY7RnkSpJE7IkQBZ7MNfIuL0YXDm0Rt5qnHTLFx/ByywVHAhmvfJySKjZI2X+Ej46HpWz8JEi2GYkuslQdKx4/DbR6CdHJiNIJkUvqjXWaygNkMBlzbiZiJ4qmrnkuAcWtJmf/Eo1xOfo7YutnuWhDnFnaZ2ns29p4R3cgGux04a35kZieEKR27ev/9QixKZaQCTumhbZOIeq9Zcu8ooWmye2/FhTxhsTCoIdTc3L9btWaVBYodqxAddm1GY/Bu+QHif2K6MBngjJM6lb5PUa8fdYS83Ko2v5njqEMFmxrsgZ0kqDAD+2nqgNvo3HT1kXIfVJX3NBKQSb6Q2wIX4mRQoTiUGWLjK/V0hEUg/UEl3FuMRjGOmT3nFp5T4IqKn3VzKy+OrgKUTi76BcBEPyFkIG7DWn7D9CVJpT4TSx0LuSO5+vsSXE7Gr+DYzMMptFjex4E7Ww5C6nZZAAA/v2LC30SiqXsv/AefPF872E/Htto3gFe+EptU1QeOmdowQ0nKZD5Ht7KpgxMTXRb2QGuRrE6Kh2XeqOcs1VCJKRXFdxGGuuozmFS+GOb6E8KkCdTW+Zc39jLad7dDT70vFl+KD/DoQ9xYmaFmi3ti+BMO92k5/5oDvn/y7L1wcD6q06GxO5uuaa0kW1O86qfF3gSNVH2yOa+h1ckYqLVieoPUDc/wwDTzE1iMWKHtWPNIWLELdxziEtT1HtjFhNs+7r5lz6X/Jtnd7D46MOPrGFfMt2UTqtnfnJCXn4jA7XoAKdd3/2PjPtbjnR3zn5ApU7xmwqkGZhrT/t23sUeat9cTrI7SfP2pUSRuHcIU6WwnknNOVNnnscd0NCyxDnNpWgH4H7/2sz9sanZ+7Xuxd5gkRYv/orYqxoq379qCziDnTUd4qGjxlH5FhiR104z4xc+bW3a5N4ik0J6PkZxliNfboemONX1B9ilUzyAJQSIaerFT5VMtruDdfp2U/rDkkzAPu3J3ghh1Jul/PfIxSXoz0xxEbI1DxCt9bDcfk3eYA57rFzbIuic/c8MJAGFhb4Zo57vvUs+/VIXmgaNQIxULx9QR7c6VdQCcTy56nZFWnyTXiXN9+YUyckYXo63/wX5/HX+iJbf2/4Cdd1oC3HD2DKfwyU0LFhLlHiNnp0PQANuh42nEurWhIg0Acsg7evmRuNLsLyXY/TzFVBhZzsgm2MWgj1i0uU/gy+UzaIRuBgpSsoihESNh2ylOSubbTb5WDOA+IUacOJSTpGA/q8YNx4m5ej5Dltpnt7XDGOXuB4Hi68eH0I5tLPzbhey1SA6I1wKfm4JREp9T2gZ9qDGE3qecnrDjA8Phk7wSrmUDu6hB8JDUxSXT6hvUL1PbWLp5zJvZc++8/DEYqp4Mg7HvlkgMy9jdF/spfAIMcf9052gfnps9kNoC7azZ3PhPZ+jM27n3pbWiZ8uMsGLHsiuxvlHwe2/UrO9lXOgl9TfEttby2/rT2GX/cI+B7PPsYf5Xn3aCJAcDKksq6j3MecfGpUFtU/eHkU24nyQ/+I4uWi9p4ue6t3+vJeie5wFY4clTO/XV82UjtWXMSET5FfkJThIgdrCNAAyKGFb5k7ubyBwXRJv5UkJq8+KTJFlwTREj/eEg9frMAkFCvYTWL5MT6Ws31KTbRgrxB2P1iuWmMiqHwtvAQNoErxZIx3ZOX+H9Tg3DWgRmnD+cpWplhf+j7QsuP+J17uHh2/IPd8T6fAdh2i+viw2mi/4E+CL/jJKQ6ZcrmG2m7KvvRKH05jAz1eQzkFMaPcECiv8mDhl0NTMIA+1L7MO8fNdDfEylRIU/FHkDB+YMP6Oevhz/ng8Cg1+7e4Kl2w8EV43I/XWuT0pAuzeIAsRCBfwy9i89cZ20AnQlFjtF5eEozcEnPg1BUz+NIc1zcGRt/ixlwbP8RPsdH0Ia+W3yLkQqttLbFavsJL5rHdhjf+89jL7a+VR/e7Q8RWSQLT3oOhdu4/yMDJf4zY/6KWXP6X8URE801Kyc0s6zx+wB1bolbl1hmkfxNz6An8WO/93KN9QabveLbgx/tq3awoO1c12AYMEWAjaC8OfrY/A6EPx13l8kQadvHZKR/asZ/X1aSJuDZHL8NprpZxad9NMYBOHcg8Dh4/DS29597H01sBp3yJLB3eAJE392FkkigCMR0DXZwgVV/SWR64Hbx0LLZXWPnlmpmBRjqhgdjKgDyUVK+DrS9lIb/T42ktuPevVRso95z4UdMr/Mrz2hrZrHAdG3wac6FypbyKlG9udaFKGKypyFbqEHpx/8MS1qYKgpvxlmNSFN0J/peeRJlfHMM/n9f8Qg9bYNGuB1b7YKGeJiR298CzwyRO9haUf/FtJEtCApNt9PNHXKiL7XH25vILRIw7wX2D7HsVCi0YvmBL9w7HhdTCfz57cLOoekDfs6K7sH4TIyYEJmlCN2EN0hxiDh7K6EYh6MdL4HX9FiRrwYZpjlDD1CM4lHjJHzRASx0F/PsnRG9gJ7wUprEh+yoi9ICwhq6DknzVCOWb1/eTsUAT9+iOETsmSMFf3EUDmjwLDIhERrw4kpwdsCoywNUckC54OquGwJvId9EUsu5liu0iiD35RqRFDVm+pORKHuvwPzFzFLQjaqBxy8GR8jnGM4Nfclxzv+RKN55bbk+2kL98IFx6rqh8Sa8dlmKp8b+nKfMw1D9wr6SuBWy3t0b9c2ZafEJUP3hV5pdNAiwIuFRNV9YYh7LripbKKIhwaR1XOX/iBsxX/An3C5TwkA/1KTTltVrftCV2S//acoYIcchkNJCwtxggfeavwFvxMze41tMjw6WcEzvF36+rrYOkdAx4+w/zaxBSX5sXfuI+2+CSQPrNZKcZFnTwpS/qOYnAlBOJItuExfSwi9ZRerLeeDfJxg/S6yX7n2cfIeRoQur6CysMuSZlA24FgutCVSPAHKdNGJZVjxDQOmALyREOa1hEnohrwxR3hhM95MksU4T6kt+B/LFY3dBFaeoVz/j3cbTwGEH2hD6aTHJeKKbyNP3PSo2jZll9hFvOtMupQUCIDP2toiChUkRFnBUPkk51vbWCF8N+PMZud79f1uJUG+q/b3HK40bFP+oMh64D0URDq/Qbp102jgBGh6DMA62TPsNOvZE2IrXp2fs0j4ltgqLAaOAZfS7fCJXHpR1j9KL8QtoMYcwg33/u06wMnN0/EdtK9Vh8ml/sYn0OxuCj+pp7RUT7Q1W0rnyM3e3DzlyLcMSNuNe1JnUo+ZZej+n6H9ER6B6CL3ISzmaNJcVnIJDU2KIpwnilejv3jpGzDzXPd6Wa2KvCMiSLcAE9FHGoWduPkcllVYC5TGXzYRt72xEfhrT9AVeMAP8YtgPT/Z8fxa+PmDFomOWtH1e3FIUuRL1VYW91LHaMgQdseRmb4ZraF4/xALYc6uMwCzIJvK5BcLFcHHAP7yoG1Q6gCL+h4Lz0fQBJiQzqieRo05yse9nhQ76SuW3YGec6CFrqJUqPl4jq1LUV3qmwNaoO7s/Y3AzPXwWckiK4waeaGrpmoZbE/4Ktfszf04ZHg3kflkPPFuIDjv1sDoBJd4FLJRCevkiE9zI0SzX2Yn88M97Y3VxJPVFHpHyP7j3M/HuGIwaJfI1/UDoYyZ6elqLytMl65JfABgVZqzMwX4GCBN2gX649M3DMwZYrmYk1RMrhWZchHyo75FgY+wAaKqzmjEuvk/yJ789g9e32Yl3AFMSDe/0Xj8CiWh5xrk35+eKwJg1wvuaIA+gqnaF8pcpA+oKV4i1ZRflva7YwGoqQ8HVbPwmKvXxy134EmsDJyRsgSFSOeko+gtGDrQYT9iskC7hQMu76JMp4XwYFjloUl9YiwgKbd88DtEa1q6gHuy7dU7Va3rAy2jZQQkUrk0Yz/w85wKujpC4Fh0kmw7ZT1T+eTdvDftGKnZjDb/9p1OYq0I5OYv9+saM62bgAOuHwxTEBPmmWkG9mO2W4JKdbrP4Yt3EmE1GbPfKu1ZzGxMagehzSOWVz9KWTLHpKBCvLOYsxxkX8NeNwSiysP8WBRLjI5MZ1ERgMOnc2CelkBDj08/Mh4pPoV/IErSISeedQLj43jibFH+fIOgKJMzek8S1Ixn6NjbSscUyC8V4Issd5G9BM8WxvJlV12SyCyctFdt9F9qIWxOkrwCmRAhBv3Zd8NBuztWVKDVT6MqkIKgZpiCZ+ikwL2ur+XMHteZoe0MO6Hw7MG6IQk2SFu9oHZ3z9D6AwfLDrpPEq/mM3fXtvOk6n9QwZ+N2AH/2dblN06i2sufx3I0S5jEJNNYFwQgzaBfi78eAUGNFDJLJxqiPcEos2+dShySYAG3lfPah4gh+qn8gPu3OFW6rz9iez2K5Ef6a/qmR1useWrL3YduEjIybMfF3Ipaq0jJpFBYf3TcUQLW63np7pQPwWqoKXFd5ZXYPh3k2vJt8B5+cLtUhQwEKOpsAmirLe8Xq2dsDs+6a+J77C3anht6W59vpi3cswO/4MSyvJbr/tHsb9JrPXdbJMbI/eNfsY+mBub074/mrSjyg2a0HZrUeVbjGHzvQ4YjFY0ImQBMUxDR4/gCRtcwj1wc4WhYzbw+VbO7IuD/m0PB6SAXE6zcC70NkxPUsM/9RsmMZanMpr4D4lXbfgDxp0d7Q8XEz589zLVbr1RGkgnW8eHG9X02IwLTe1X3tWxx//SUh6y1RUQ4MTfuQ6OfsVx71tYYUaO98o+yOjB7vADwTFTKHEwLeddqoj737Art1dOvBb3q9M5x7W1kj14vJIRd47UA5qQ9zxY+yVQ23ReyzhU7LrDyvq1dhQ6ZR3Q1GCEupxMQ6wER7eRx+6Ov97t+C3AIUJAdY5FJs3BYoA3yUuGJuuMop52qI8GQEogn0yUnqCaO6MySpYY8MH6Jb677oRt9+yVsGiDYjiyGqVXMqCs2iuviwbB5dIz4vJT+guuTB4LXsKbCVLAlAn7gBXKINHYfyyoZUAyYhnXKRgm76ITnvC6RvXs8LZvacKEioNF4S5gNsxABpfC/o0wOs7g+/JNGkEua6dQ13a5mNdDUhAIOB10lt1fC75KQCdJwfWX1UanIxXV+mekb47crpd1b5Mz1KpGQ6RTQBXPZqcI7BWKXb64caj0eRQKq3usYsXj6DV+KeEJlYYI3NrQQJLC/zOYOm3a/bChxGczVQNjb9Q4MVxCubmotSDoSJ+KK6rxEMWQMWmv8Klu9C5R0DKoJaJoc9wcB04YV1f7rE5oqxTBHCnfjFEyTxFq7Q+9dmd8yC1UuzgP5YGsB9NfBVpBl9SrTipCd9zqyxrPisWr5olmc6SfLGyrf1lfckwu6jC9KB9YJ0KHYR3EqQYKI1jo79mnijtWQ44GXi6KsXQQ50jOYxYffLJM1tlPI6Pm7n+EWLB8ZsTW4LSUgL9tMTQyF3yO3m2Ny9+MMjIGopHqFFgLbDCiOdsKoqNVdVQoucsOo0s8jjPAQDz84FjyBDSY1YvZnse02x5EukcqAWQ8so2riIFVwT2DSxB2SOdY9wBMo8X/r4ekHmHzOmf5caYIYrEWY6PAtaHSmDkz8GWTAXNsvuGsztM3Q3QRSQekKLn/Hb5YTuh5+X6HeaarltyUbzqEfwtjp38aj1FPNt5GyqQma+xiMRv8eH/7yDJhP3nJDGsjrZugIGuBYe8fm54KXZNjhHc6iqJnYPHWEvakgAAAAA==">
+<link rel="apple-touch-icon" href="data:image/webp;base64,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">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Lora:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f7f7fa; --card:#fff; --line:#e6e6ee; --text:#1c1c28; --muted:#6b6b80;
+  --accent:#7c5cf5; --accent-soft:#efeafe; --green:#1a9c5b; --green-soft:#e6f6ee;
+  --red:#d6362c; --red-soft:#fcecea; --amber:#d97b12; --amber-soft:#fdf2e3; --blue:#2c67d6; --blue-soft:#e8effc;
+  --sb:250px; --radius:14px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{font-family:Manrope,system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:14px;line-height:1.45}
+button,input,select{font:inherit;color:inherit}
+button{cursor:pointer;border:0;background:none}
+
+/* ---------- layout ---------- */
+.app{display:flex;min-height:100vh}
+.sidebar{width:var(--sb);background:#fff;border-right:1px solid var(--line);display:flex;flex-direction:column;position:fixed;inset:0 auto 0 0;z-index:40;transition:transform .25s}
+.brand{display:flex;align-items:center;gap:10px;padding:20px 18px;border-bottom:1px solid var(--line)}
+.brand .mark{width:34px;height:34px;border-radius:9px;object-fit:cover;flex:none}
+.brand b{display:block;font-size:14px;letter-spacing:.02em}
+.brand small{color:var(--muted);font-size:11px}
+.nav{padding:10px 12px;flex:1;overflow:auto}
+.nav .sec{font-size:10.5px;letter-spacing:.09em;color:var(--muted);padding:14px 10px 6px;text-transform:uppercase}
+.nav a{display:flex;align-items:center;gap:11px;padding:9px 12px;border-radius:10px;color:var(--text);text-decoration:none;font-weight:500}
+.nav a svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.7;color:#55556a}
+.nav a.active{background:var(--accent-soft);color:var(--accent)}
+.nav a.active svg{color:var(--accent)}
+.user{display:flex;align-items:center;gap:10px;padding:14px 18px;border-top:1px solid var(--line)}
+.avatar{width:32px;height:32px;border-radius:50%;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;font-weight:700;font-size:12px}
+.user b{display:block;font-size:13px}
+.user small{color:var(--muted);font-size:11px}
+
+.main{margin-left:var(--sb);flex:1;min-width:0}
+.topbar{height:56px;display:flex;align-items:center;gap:12px;padding:0 24px;background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:30}
+.topbar .crumb{color:var(--muted);flex:1}
+.topbar .crumb b{color:var(--text);font-weight:500}
+.burger{display:none;width:36px;height:36px;border-radius:9px;place-items:center}
+.burger svg{width:22px;height:22px;stroke:var(--text);fill:none;stroke-width:2}
+.pill{background:var(--amber-soft);color:var(--amber);font-size:11.5px;padding:5px 10px;border-radius:8px;font-weight:600}
+.clock{color:var(--muted);font-variant-numeric:tabular-nums}
+.content{padding:24px;max-width:1500px}
+.page{display:none}.page.active{display:block}
+h1{font-family:Lora,serif;font-size:26px;font-weight:700;margin-bottom:2px}
+.sub{color:var(--muted);margin-bottom:20px}
+
+/* ---------- cards ---------- */
+.grid{display:grid;gap:16px}
+.g4{grid-template-columns:repeat(4,1fr)}.g2{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:repeat(3,1fr)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px}
+.stat .lbl{display:flex;justify-content:space-between;align-items:center;color:var(--muted);margin-bottom:12px}
+.ico{width:34px;height:34px;border-radius:9px;display:grid;place-items:center}
+.ico svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.8}
+.stat .val{font-family:Lora,serif;font-size:30px;font-weight:700;line-height:1.1}
+.stat .note{color:var(--muted);font-size:12.5px;margin-top:6px}
+.c-accent{color:var(--accent)}.c-green{color:var(--green)}.c-red{color:var(--red)}.c-amber{color:var(--amber)}.c-blue{color:var(--blue)}
+.b-accent{background:var(--accent-soft);color:var(--accent)}.b-green{background:var(--green-soft);color:var(--green)}.b-red{background:var(--red-soft);color:var(--red)}.b-amber{background:var(--amber-soft);color:var(--amber)}.b-blue{background:var(--blue-soft);color:var(--blue)}
+.card h3{font-size:16px;font-weight:700;margin-bottom:4px}
+.card .hint{color:var(--muted);font-size:12.5px;margin-bottom:14px}
+.mt{margin-top:16px}
+
+/* bars */
+.bars{display:grid;gap:10px}
+.bar{display:grid;grid-template-columns:130px 1fr;align-items:center;gap:12px;font-size:13px}
+.bar .track{background:#f0f0f5;border-radius:6px;height:22px;overflow:hidden}
+.bar .fill{height:100%;border-radius:6px;background:var(--accent);color:#fff;font-size:11.5px;font-weight:600;padding:0 8px;display:flex;align-items:center;white-space:nowrap;min-width:fit-content}
+.bar .fill.red{background:var(--red)}
+.empty{color:var(--muted);padding:18px 0;text-align:center}
+
+/* mini stat row */
+.mini{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.mini div{border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.mini span{display:block;color:var(--muted);font-size:12.5px;margin-bottom:6px}
+.mini b{font-family:Lora,serif;font-size:24px}
+
+/* ---------- forms ---------- */
+.form{display:grid;grid-template-columns:150px 1fr 170px 1fr auto;gap:10px;align-items:end}
+.field label{display:block;font-size:12px;color:var(--muted);margin-bottom:5px}
+.field input,.field select{width:100%;height:40px;border:1px solid var(--line);border-radius:9px;padding:0 12px;background:#fff}
+.field input:focus,.field select:focus{outline:2px solid var(--accent);outline-offset:-1px;border-color:transparent}
+.btn{height:40px;padding:0 18px;border-radius:9px;font-weight:600;background:var(--accent);color:#fff;display:inline-flex;align-items:center;gap:8px;white-space:nowrap}
+.btn.ghost{background:#fff;border:1px solid var(--line);color:var(--text)}
+.btn.danger{background:var(--red-soft);color:var(--red)}
+.btn.sm{height:32px;padding:0 12px;font-size:12.5px}
+.btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.chip .ic{font-size:15px;line-height:1}
+.icobtn{width:44px;height:40px;border:1px solid var(--line);border-radius:9px;background:#fff;font-size:20px;display:grid;place-items:center;flex:none}
+.icobtn:hover{background:var(--bg)}
+.withico{display:flex;gap:6px}.withico input{flex:1}
+.picker{display:none;position:fixed;inset:0;background:rgba(20,20,40,.5);z-index:90;align-items:center;justify-content:center;padding:16px}
+.picker.show{display:flex}
+.picker .box{background:#fff;border-radius:16px;padding:22px;width:100%;max-width:400px}
+.picker h3{font-family:Lora,serif;font-size:19px;margin-bottom:4px}
+.picker .grid8{display:grid;grid-template-columns:repeat(8,1fr);gap:6px;margin:14px 0}
+.picker .grid8 button{aspect-ratio:1;border-radius:9px;font-size:22px;border:1px solid transparent}
+.picker .grid8 button:hover{background:var(--accent-soft)}
+.picker .grid8 button.on{border-color:var(--accent);background:var(--accent-soft)}
+.picker .row{display:flex;gap:8px}.picker .row input{flex:1;height:40px;border:1px solid var(--line);border-radius:9px;padding:0 12px;font-size:18px;text-align:center}
+.tag .ic{margin-right:5px}
+.chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 13px;font-size:13px;font-weight:500;display:inline-flex;gap:6px;align-items:center}
+.chip.on{background:var(--accent-soft);border-color:var(--accent);color:var(--accent)}
+.month{display:inline-flex;align-items:center;gap:4px;border:1px solid var(--line);border-radius:9px;background:#fff;height:36px;padding:0 6px}
+.month button{width:30px;height:30px;border-radius:7px;font-size:16px}
+.month button:hover{background:var(--bg)}
+.month b{min-width:130px;text-align:center;font-weight:600}
+.toolbar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:16px}
+
+/* ---------- table ---------- */
+table{width:100%;border-collapse:collapse}
+th{font-size:12px;color:var(--muted);text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);font-weight:600}
+td{padding:10px;border-bottom:1px solid #f0f0f5;vertical-align:middle}
+tr:last-child td{border-bottom:0}
+td.num{text-align:right;font-variant-numeric:tabular-nums;font-weight:600;white-space:nowrap}
+th.num{text-align:right}
+td .del{width:30px;height:30px;border-radius:8px;color:var(--muted)}
+td .del:hover{background:var(--red-soft);color:var(--red)}
+tfoot td{font-weight:700;background:#fafafd}
+.tag{display:inline-block;padding:3px 9px;border-radius:999px;font-size:12px;font-weight:600}
+
+/* ---------- toast ---------- */
+.toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%) translateY(20px);background:#1c1c28;color:#fff;padding:10px 16px;border-radius:10px;font-size:13px;opacity:0;transition:.25s;z-index:99;pointer-events:none}
+.toast.show{opacity:1;transform:translateX(-50%)}
+textarea{width:100%;min-height:120px;border:1px solid var(--line);border-radius:9px;padding:10px;font-family:ui-monospace,monospace;font-size:12px}
+
+/* ---------- login screen ---------- */
+.login{display:none;position:fixed;inset:0;background:#f1f1f6;z-index:80;align-items:center;justify-content:center;padding:20px;overflow:auto}
+.login.show{display:flex}
+.login .box{background:#fff;border-radius:22px;padding:34px 36px;width:100%;max-width:410px;box-shadow:0 20px 60px rgba(60,40,140,.10)}
+.login .head{display:flex;align-items:center;gap:16px;margin-bottom:28px}
+.login .logo{width:60px;height:60px;border-radius:16px;flex:none;object-fit:cover;box-shadow:0 8px 20px rgba(30,60,140,.3)}
+.login .head b{font-family:Lora,serif;font-size:22px;display:block;line-height:1.1}
+.login .head small{color:var(--muted);font-size:13px}
+.login h3{font-family:Lora,serif;font-size:26px;margin-bottom:6px}
+.login .hint{font-size:14px;margin-bottom:22px}
+.login .field{margin-bottom:16px}
+.login .field label{color:var(--text);font-weight:600;font-size:13px;margin-bottom:8px}
+.login .field input{height:48px;background:#fafafd}
+.login .btn{width:100%;justify-content:center;height:46px;font-size:15px;margin-top:8px}
+.login .foot{color:var(--muted);font-size:12.5px;text-align:center;margin-top:18px}
+.app.hidden{display:none}
+.pw{position:relative}.pw input{padding-right:42px}
+.pw button{position:absolute;right:8px;top:10px;width:28px;height:28px;border-radius:7px;color:var(--muted)}
+.form .pw button{top:6px}
+.err{color:var(--red);font-size:12.5px;min-height:18px;margin-bottom:8px}
+.lockbar{display:flex;align-items:center;gap:10px;background:var(--green-soft);color:var(--green);padding:10px 14px;border-radius:10px;margin-bottom:16px;font-weight:600}
+.lockbar button{margin-left:auto}
+
+/* ---------- mobile ---------- */
+.overlay{display:none;position:fixed;inset:0;background:rgba(20,20,40,.45);z-index:35}
+@media (max-width:1100px){.g4{grid-template-columns:repeat(2,1fr)}.mini{grid-template-columns:repeat(2,1fr)}.form{grid-template-columns:1fr 1fr}.form .full{grid-column:1/-1}}
+@media (max-width:820px){
+  .sidebar{transform:translateX(-100%);box-shadow:0 0 40px rgba(0,0,0,.15)}
+  .sidebar.open{transform:none}
+  .overlay.show{display:block}
+  .main{margin-left:0}
+  .burger{display:grid}
+  .content{padding:16px}
+  .topbar{padding:0 14px}
+  .pill{display:none}
+  .g2,.g3{grid-template-columns:1fr}
+  h1{font-size:22px}
+  .stat .val{font-size:26px}
+  .bar{grid-template-columns:100px 1fr}
+  table{font-size:13px}
+  th:nth-child(4),td:nth-child(4){display:none} /* izoh ustuni telefonda yashirin */
+}
+@media (max-width:480px){.g4{grid-template-columns:1fr 1fr}.mini{grid-template-columns:1fr 1fr}.form{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="app">
+
+<!-- ================= SIDEBAR ================= -->
+<aside class="sidebar" id="sidebar">
+  <div class="brand"><img class="mark" src="data:image/webp;base64,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" alt=""><div><b>KIRIM-CHIQIM</b><small>Shaxsiy moliya platformasi</small></div></div>
+  <nav class="nav">
+    <div class="sec">Platforma</div>
+    <a href="#bosh" data-page="bosh" class="active"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>Bosh sahifa</a>
+    <div class="sec">Kirim-chiqim</div>
+    <a href="#kirim" data-page="kirim"><svg viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg>Kirim</a>
+    <a href="#chiqim" data-page="chiqim"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"/></svg>Chiqim</a>
+    <a href="#zahira" data-page="zahira"><svg viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="13" rx="2"/><path d="M2 10h20M6 15h4"/></svg>Zahira</a>
+    <div class="sec">Hisobotlar</div>
+    <a href="#hisobot" data-page="hisobot"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>Oylik hisobot</a>
+    <div class="sec">Sozlamalar</div>
+    <a href="#boshqaruv" data-page="boshqaruv"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg>Boshqaruv paneli</a>
+  </nav>
+  <div class="user"><div class="avatar" id="uAv">AZ</div><div style="flex:1;min-width:0"><b id="uName">ASADOV ZARIF</b><small>Shaxsiy hisob</small></div><button id="logoutBtn" aria-label="Chiqish" title="Chiqish" style="color:var(--muted)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/></svg></button></div>
+</aside>
+<div class="overlay" id="overlay"></div>
+
+<!-- ================= MAIN ================= -->
+<div class="main">
+  <header class="topbar">
+    <button class="burger" id="burger" aria-label="Menyu"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    <div class="crumb">Bosh sahifa <span id="crumb"></span></div>
+    <span class="pill" id="storagePill">Ma'lumot brauzerda saqlanadi</span>
+    <span class="clock" id="clock"></span>
+  </header>
+
+  <div class="content">
+
+    <!-- ---------- BOSH SAHIFA ---------- -->
+    <section class="page active" id="page-bosh">
+      <h1 id="greet">Xush kelibsiz!</h1>
+      <div class="sub">Tanlangan oy bo'yicha umumiy ko'rsatkichlar</div>
+      <div class="toolbar"><div class="month"><button data-m="-1">‹</button><b id="monthLbl"></b><button data-m="1">›</button></div><button class="btn ghost sm" id="todayBtn">Joriy oy</button></div>
+
+      <div class="grid g4">
+        <div class="card stat"><div class="lbl">Kirim <span class="ico b-green"><svg viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg></span></div><div class="val c-green" id="sKirim">0</div><div class="note" id="sKirimN"></div></div>
+        <div class="card stat"><div class="lbl">Chiqim <span class="ico b-red"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"/></svg></span></div><div class="val c-red" id="sChiqim">0</div><div class="note" id="sChiqimN"></div></div>
+        <div class="card stat"><div class="lbl">Oy balansi <span class="ico b-accent"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/></svg></span></div><div class="val c-accent" id="sBalans">0</div><div class="note">Kirim − chiqim</div></div>
+        <div class="card stat"><div class="lbl">Zahira <span class="ico b-amber"><svg viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="13" rx="2"/><path d="M2 10h20"/></svg></span></div><div class="val c-amber" id="sZahira">0</div><div class="note" id="sZahiraN"></div></div>
+      </div>
+
+      <div class="grid g2 mt">
+        <div class="card"><h3>Kirim manbalari bo'yicha</h3><div class="hint">Shu oydagi kirimlar</div><div class="bars" id="barsKirim"></div></div>
+        <div class="card"><h3>Chiqim kategoriyalari bo'yicha</h3><div class="hint">Shu oydagi chiqimlar</div><div class="bars" id="barsChiqim"></div></div>
+      </div>
+
+      <div class="card mt"><h3>Holat ko'rsatkichlari</h3><div class="hint">Shu oy uchun muhim raqamlar</div>
+        <div class="mini">
+          <div><span>Kirim yozuvlari</span><b class="c-green" id="mK">0</b></div>
+          <div><span>Chiqim yozuvlari</span><b class="c-red" id="mC">0</b></div>
+          <div><span>Kunlik o'rtacha chiqim</span><b class="c-amber" id="mAvg">0</b></div>
+          <div><span>Eng katta chiqim</span><b class="c-blue" id="mMax">0</b></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------- KIRIM ---------- -->
+    <section class="page" id="page-kirim">
+      <h1>Kirim</h1><div class="sub">Daromadlarni kiritish va ko'rish</div>
+      <div class="card"><h3>Yangi kirim qo'shish</h3><div class="hint">Manbani tanlang yoki yangisini yozing</div>
+        <div class="form">
+          <div class="field"><label>Sana</label><input type="date" id="kDate"></div>
+          <div class="field"><label>Manba</label><div class="withico"><button class="icobtn" id="kIco" type="button" title="Ikonka tanlash">💼</button><input id="kSrc" placeholder="mas. AFU" list="srcList" autocomplete="off"><datalist id="srcList"></datalist></div></div>
+          <div class="field"><label>Summa (so'm)</label><input type="number" inputmode="numeric" id="kSum" placeholder="0"></div>
+          <div class="field"><label>Izoh</label><input id="kNote" placeholder="ixtiyoriy"></div>
+          <button class="btn" id="kAdd">+ Qo'shish</button>
+        </div>
+        <div class="chips" id="srcChips"></div>
+      </div>
+      <div class="card mt"><div class="toolbar" style="margin-bottom:8px"><h3 style="flex:1">Kirimlar ro'yxati</h3><div class="month"><button data-m="-1">‹</button><b class="monthLbl"></b><button data-m="1">›</button></div></div>
+        <div style="overflow:auto"><table><thead><tr><th>Sana</th><th>Manba</th><th class="num">Summa</th><th>Izoh</th><th></th></tr></thead><tbody id="kBody"></tbody><tfoot><tr><td colspan="2">Jami</td><td class="num" id="kTotal">0</td><td colspan="2"></td></tr></tfoot></table></div>
+      </div>
+    </section>
+
+    <!-- ---------- CHIQIM ---------- -->
+    <section class="page" id="page-chiqim">
+      <h1>Chiqim</h1><div class="sub">Xarajatlarni kiritish va ko'rish</div>
+      <div class="card"><h3>Yangi chiqim qo'shish</h3><div class="hint">Kategoriyani tanlang yoki yangisini yozing</div>
+        <div class="form">
+          <div class="field"><label>Sana</label><input type="date" id="cDate"></div>
+          <div class="field"><label>Kategoriya</label><div class="withico"><button class="icobtn" id="cIco" type="button" title="Ikonka tanlash">🛒</button><input id="cCat" placeholder="mas. Oziq-ovqat" list="catList" autocomplete="off"><datalist id="catList"></datalist></div></div>
+          <div class="field"><label>Summa (so'm)</label><input type="number" inputmode="numeric" id="cSum" placeholder="0"></div>
+          <div class="field"><label>Izoh</label><input id="cNote" placeholder="ixtiyoriy"></div>
+          <button class="btn" id="cAdd">+ Qo'shish</button>
+        </div>
+        <div class="chips" id="catChips"></div>
+      </div>
+      <div class="card mt"><div class="toolbar" style="margin-bottom:8px"><h3 style="flex:1">Chiqimlar ro'yxati</h3><div class="month"><button data-m="-1">‹</button><b class="monthLbl"></b><button data-m="1">›</button></div></div>
+        <div style="overflow:auto"><table><thead><tr><th>Sana</th><th>Kategoriya</th><th class="num">Summa</th><th>Izoh</th><th></th></tr></thead><tbody id="cBody"></tbody><tfoot><tr><td colspan="2">Jami</td><td class="num" id="cTotal">0</td><td colspan="2"></td></tr></tfoot></table></div>
+      </div>
+    </section>
+
+    <!-- ---------- ZAHIRA ---------- -->
+    <section class="page" id="page-zahira">
+      <h1>Zahira</h1><div class="sub">Naqd pul va karta qoldiqlari</div>
+      <div class="grid g3">
+        <div class="card stat"><div class="lbl">Naqd <span class="ico b-green"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="11" rx="2"/><circle cx="12" cy="12.5" r="2.5"/></svg></span></div><div class="val c-green" id="zNaqd">0</div></div>
+        <div class="card stat"><div class="lbl">Karta <span class="ico b-blue"><svg viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="13" rx="2"/><path d="M2 10h20"/></svg></span></div><div class="val c-blue" id="zKarta">0</div></div>
+        <div class="card stat"><div class="lbl">Jami zahira <span class="ico b-amber"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/></svg></span></div><div class="val c-amber" id="zJami">0</div></div>
+      </div>
+      <div class="card mt"><h3>Qoldiqni yangilash</h3><div class="hint">Hozirgi haqiqiy qoldiqni kiriting — platforma tarixini saqlab qoladi</div>
+        <div class="form" style="grid-template-columns:150px 1fr 1fr auto">
+          <div class="field"><label>Sana</label><input type="date" id="zDate"></div>
+          <div class="field"><label>Naqd (so'm)</label><input type="number" inputmode="numeric" id="zN" placeholder="0"></div>
+          <div class="field"><label>Karta (so'm)</label><input type="number" inputmode="numeric" id="zK" placeholder="0"></div>
+          <button class="btn" id="zAdd">Saqlash</button>
+        </div>
+      </div>
+      <div class="card mt"><h3>Zahira tarixi</h3>
+        <div style="overflow:auto"><table><thead><tr><th>Sana</th><th class="num">Naqd</th><th class="num">Karta</th><th class="num">Jami</th><th></th></tr></thead><tbody id="zBody"></tbody></table></div>
+      </div>
+    </section>
+
+    <!-- ---------- HISOBOT ---------- -->
+    <section class="page" id="page-hisobot">
+      <h1>Oylik hisobot</h1><div class="sub">Yil davomida oylar kesimida kirim, chiqim va balans</div>
+      <div class="toolbar"><div class="month" style="padding:0 6px"><button id="yPrev">‹</button><b id="yearLbl"></b><button id="yNext">›</button></div><button class="btn ghost sm" onclick="window.print()">Chop etish</button></div>
+      <div class="card"><div style="overflow:auto"><table><thead><tr><th>Oy</th><th class="num">Kirim</th><th class="num">Chiqim</th><th class="num">Balans</th><th class="num">Yozuvlar</th></tr></thead><tbody id="hBody"></tbody><tfoot><tr id="hFoot"></tr></tfoot></table></div></div>
+    </section>
+
+    <!-- ---------- BOSHQARUV ---------- -->
+    <section class="page" id="page-boshqaruv">
+      <h1>Boshqaruv paneli</h1><div class="sub">Ma'lumotlarni zaxiralash, tiklash va sozlash</div>
+      <div class="lockbar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><span id="lockWho">Kirilgan</span><button class="btn ghost sm" id="lockBtn">Tizimdan chiqish</button></div>
+      <div class="card" style="margin-bottom:16px"><h3>Login va parol</h3><div class="hint">Tizimga kirish uchun. Standart: admin / 1234 — albatta o'zgartiring.</div>
+        <div class="form" style="grid-template-columns:1fr 1fr 1fr 1fr auto">
+          <div class="field"><label>Login</label><input id="aLogin" autocomplete="username"></div>
+          <div class="field"><label>Joriy parol</label><div class="pw"><input type="password" id="aOld" autocomplete="current-password"><button type="button" data-eye="aOld">👁</button></div></div>
+          <div class="field"><label>Yangi parol</label><div class="pw"><input type="password" id="aNew" autocomplete="new-password"><button type="button" data-eye="aNew">👁</button></div></div>
+          <div class="field"><label>Yangi parol (takror)</label><div class="pw"><input type="password" id="aNew2" autocomplete="new-password"><button type="button" data-eye="aNew2">👁</button></div></div>
+          <button class="btn" id="aSave">Saqlash</button>
+        </div>
+        <div class="err" id="aErr" style="margin-top:8px"></div>
+      </div>
+      <div class="grid g3">
+        <div class="card"><h3>To'liq zaxira (JSON)</h3><div class="hint">Barcha kirim, chiqim va zahira yozuvlarini bitta faylga saqlang. Telefon ↔ kompyuter o'tkazish uchun.</div><button class="btn ghost sm" id="expBtn">↓ JSON eksport</button></div>
+        <div class="card"><h3>JSON'dan tiklash</h3><div class="hint">Avval eksport qilingan faylni yuklang — hozirgi ma'lumot to'liq almashtiriladi.</div><label class="btn ghost sm" for="impFile" style="cursor:pointer">↑ JSON yuklash</label><input type="file" id="impFile" accept=".json" hidden></div>
+        <div class="card"><h3>Hammasini tozalash</h3><div class="hint">Barcha yozuvlar o'chiriladi. Avval zaxira nusxa oling.</div><button class="btn danger sm" id="resetBtn">Tozalash</button></div>
+      </div>
+      <div class="grid g2 mt">
+        <div class="card"><h3>Kirim manbalari</h3><div class="hint">Ikonkani bosib o'zgartiring, ✕ — o'chirish</div><div class="chips" id="srcManage"></div>
+          <div class="form mt" style="grid-template-columns:1fr auto"><div class="field"><div class="withico"><button class="icobtn" id="srcNewIco" type="button">💼</button><input id="srcNew" placeholder="Yangi manba nomi"></div></div><button class="btn sm" style="height:40px" id="srcNewBtn">Qo'shish</button></div></div>
+        <div class="card"><h3>Chiqim kategoriyalari</h3><div class="hint">Ikonkani bosib o'zgartiring, ✕ — o'chirish</div><div class="chips" id="catManage"></div>
+          <div class="form mt" style="grid-template-columns:1fr auto"><div class="field"><div class="withico"><button class="icobtn" id="catNewIco" type="button">🛒</button><input id="catNew" placeholder="Yangi kategoriya nomi"></div></div><button class="btn sm" style="height:40px" id="catNewBtn">Qo'shish</button></div></div>
+      </div>
+      <div class="card mt"><h3>Foydalanuvchi nomi</h3><div class="hint">Bosh sahifadagi salomlashuvda ko'rinadi</div>
+        <div class="form" style="grid-template-columns:1fr auto"><div class="field"><input id="nameInp" placeholder="Ism Familiya"></div><button class="btn sm" style="height:40px" id="nameBtn">Saqlash</button></div></div>
+    </section>
+
+  </div>
+</div>
+</div>
+<div class="toast" id="toast"></div>
+
+<!-- ================= ICON PICKER ================= -->
+<div class="picker" id="picker">
+  <div class="box">
+    <h3>Ikonka tanlang</h3><div class="hint" id="pickTitle"></div>
+    <div class="grid8" id="pickGrid"></div>
+    <div class="row"><input id="pickCustom" placeholder="yoki o'z emojingiz" maxlength="4"><button class="btn" id="pickOk">Tanlash</button><button class="btn ghost" id="pickCancel">Bekor</button></div>
+  </div>
+</div>
+
+<!-- ================= LOGIN SCREEN ================= -->
+<div class="login" id="loginScreen">
+  <div class="box">
+    <div class="head"><img class="logo" src="data:image/webp;base64,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" alt=""><div><b>Oylik kirim-chiqim</b><small>Shaxsiy moliya platformasi</small></div></div>
+    <h3>Tizimga kirish</h3><div class="hint">Kirim-chiqim platformasiga kirish uchun login va parolni kiriting</div>
+    <div class="field"><label>Login</label><input id="lLogin" autocomplete="username" placeholder="Login kiriting"></div>
+    <div class="field"><label>Parol</label><div class="pw"><input type="password" id="lPass" autocomplete="current-password" placeholder="Parol kiriting"><button type="button" data-eye="lPass">👁</button></div></div>
+    <label style="display:flex;gap:8px;align-items:center;font-size:13px;color:var(--muted)"><input type="checkbox" id="lRemember" checked> Bu qurilmada eslab qolish</label>
+    <div class="err" id="lErr"></div>
+    <button class="btn" id="lBtn">Kirish</button>
+    <div class="foot" id="lFoot"></div>
+  </div>
+</div>
+
+<script>
+/* ================= DATA ================= */
+const KEY='kc_platform_v1';
+function hash(s){let h=2166136261;for(const c of 'kc|'+s){h^=c.charCodeAt(0);h=Math.imul(h,16777619)>>>0;}let h2=5381;for(const c of s+'|kc'){h2=(Math.imul(h2,33)^c.charCodeAt(0))>>>0;}return h.toString(16)+h2.toString(16);}
+const DEF={auth:{login:'admin',pass:hash('1234')},name:'ASADOV ZARIF',sources:[{name:'AFU',icon:'🏫'},{name:'Tez Yordam',icon:'🚑'},{name:'City Med',icon:'🏥'}],cats:[{name:'Oziq-ovqat',icon:'🛒'},{name:'Transport',icon:'🚕'},{name:'Kommunal',icon:'💡'},{name:'Kiyim',icon:'👕'},{name:'Sog\'liq',icon:'💊'},{name:'Ta\'lim',icon:'📚'},{name:'Boshqa',icon:'📦'}],kirim:[],chiqim:[],zahira:[]};
+let D; let memFallback=null;
+function load(){
+  try{const r=localStorage.getItem(KEY);D=r?Object.assign({},DEF,JSON.parse(r)):structuredClone(DEF);}
+  catch(e){D=memFallback||structuredClone(DEF);document.getElementById('storagePill').textContent='Saqlash ishlamayapti — JSON eksport qiling';}
+}
+function save(){
+  try{localStorage.setItem(KEY,JSON.stringify(D));}catch(e){memFallback=D;}
+}
+load();
+function migrate(){['sources','cats'].forEach(f=>{D[f]=(D[f]||[]).map(x=>typeof x==='string'?{name:x,icon:f==='sources'?'💼':'🛒'}:x);});}
+migrate();
+
+/* ================= HELPERS ================= */
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const fmt=n=>Math.round(n||0).toLocaleString('ru-RU').replace(/,/g,' ');
+const MONTHS=['Yanvar','Fevral','Mart','Aprel','May','Iyun','Iyul','Avgust','Sentabr','Oktabr','Noyabr','Dekabr'];
+const todayISO=()=>{const d=new Date();return d.toISOString().slice(0,10);};
+const dmy=s=>{const [y,m,d]=s.split('-');return `${d}.${m}.${y}`;};
+let cur=new Date(); cur=new Date(cur.getFullYear(),cur.getMonth(),1);
+let year=cur.getFullYear();
+const inMonth=r=>r.date.startsWith(`${cur.getFullYear()}-${String(cur.getMonth()+1).padStart(2,'0')}`);
+const byDate=(a,b)=>a.date<b.date?-1:a.date>b.date?1:a.id-b.id;
+const uid=()=>Date.now()+Math.floor(Math.random()*1000);
+function toast(t){const e=$('#toast');e.textContent=t;e.classList.add('show');clearTimeout(e._t);e._t=setTimeout(()=>e.classList.remove('show'),2200);}
+const iconOf=(list,name)=>{const f=D[list].find(x=>x.name===name);return f?f.icon:(list==='sources'?'💼':'🛒');};
+function group(rows,key){const m={};rows.forEach(r=>m[r[key]]=(m[r[key]]||0)+r.sum);return Object.entries(m).sort((a,b)=>b[1]-a[1]);}
+
+/* ================= ICON PICKER ================= */
+const EMOJIS=['🏫','🏥','🚑','💼','🏢','🏭','🏪','🏛️','💻','⚙️','💰','🏦','📈','🎁','👨‍⚕️','🎓',
+'🛒','🍞','☕','🍽️','🚕','🚌','⛽','🚗','💡','🏠','🔑','👕','💊','🩺','📚','📱','🎉','✈️','🔧','💇','🐾','🎮','📦','🎗️'];
+let pickCb=null, pickSel='';
+function openPicker(title,current,cb){
+  pickCb=cb; pickSel=current||''; $('#pickTitle').textContent=title; $('#pickCustom').value='';
+  $('#pickGrid').innerHTML=EMOJIS.map(e=>`<button type="button" class="${e===pickSel?'on':''}" data-e="${e}">${e}</button>`).join('');
+  $('#pickGrid').querySelectorAll('button').forEach(b=>b.onclick=()=>{pickSel=b.dataset.e;$('#pickCustom').value='';$('#pickGrid').querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===b));});
+  $('#picker').classList.add('show');
+}
+$('#pickCustom').oninput=()=>{if($('#pickCustom').value.trim()){pickSel=$('#pickCustom').value.trim();$('#pickGrid').querySelectorAll('button').forEach(x=>x.classList.remove('on'));}};
+$('#pickOk').onclick=()=>{if(pickSel){pickCb&&pickCb(pickSel);}$('#picker').classList.remove('show');};
+$('#pickCancel').onclick=()=>$('#picker').classList.remove('show');
+$('#picker').onclick=e=>{if(e.target.id==='picker')$('#picker').classList.remove('show');};
+[['#kIco','Kirim manbasi uchun'],['#cIco','Chiqim kategoriyasi uchun'],['#srcNewIco','Yangi manba uchun'],['#catNewIco','Yangi kategoriya uchun']].forEach(([id,t])=>{
+  $(id).onclick=()=>openPicker(t,$(id).textContent,e=>$(id).textContent=e);
+});
+/* typing an existing name auto-picks its icon */
+$('#kSrc').oninput=()=>{const f=D.sources.find(x=>x.name===$('#kSrc').value.trim());if(f)$('#kIco').textContent=f.icon;};
+$('#cCat').oninput=()=>{const f=D.cats.find(x=>x.name===$('#cCat').value.trim());if(f)$('#cIco').textContent=f.icon;};
+
+/* ================= NAV ================= */
+const TITLES={bosh:'',kirim:'› Kirim',chiqim:'› Chiqim',zahira:'› Zahira',hisobot:'› Oylik hisobot',boshqaruv:'› Boshqaruv paneli'};
+/* ---- auth ---- */
+const AUTH_KEY='kc_admin_ok';
+let unlocked=(()=>{try{return sessionStorage.getItem(AUTH_KEY)==='1'||localStorage.getItem(AUTH_KEY)==='1';}catch{return false;}})();
+function showLogin(){
+  $('#lErr').textContent='';$('#lPass').value='';
+  const a=D.auth||DEF.auth;
+  $('#lFoot').textContent=a.pass===DEF.auth.pass?'Birinchi kirish: admin / 1234 — keyin Boshqaruv panelida o\'zgartiring':'';
+  $('#loginScreen').classList.add('show');$('.app').classList.add('hidden');setTimeout(()=>$('#lLogin').focus(),50);
+}
+function showApp(){$('#loginScreen').classList.remove('show');$('.app').classList.remove('hidden');}
+$('#lBtn').onclick=()=>{
+  const a=D.auth||DEF.auth;
+  if($('#lLogin').value.trim()===a.login&&hash($('#lPass').value)===a.pass){
+    unlocked=true;
+    try{sessionStorage.setItem(AUTH_KEY,'1');if($('#lRemember').checked)localStorage.setItem(AUTH_KEY,'1');else localStorage.removeItem(AUTH_KEY);}catch{}
+    showApp();go(location.hash.slice(1)||'bosh');toast('Xush kelibsiz, '+(D.name||a.login));
+  }else $('#lErr').textContent='Login yoki parol noto\'g\'ri';
+};
+$('#lPass').onkeydown=e=>{if(e.key==='Enter')$('#lBtn').click();};
+function logout(){unlocked=false;try{sessionStorage.removeItem(AUTH_KEY);localStorage.removeItem(AUTH_KEY);}catch{};location.hash='bosh';showLogin();}
+$('#lockBtn').onclick=logout; $('#logoutBtn').onclick=logout;
+$$('[data-eye]').forEach(b=>b.onclick=()=>{const i=$('#'+b.dataset.eye);i.type=i.type==='password'?'text':'password';});
+$('#aSave').onclick=()=>{
+  const a=D.auth||DEF.auth, login=$('#aLogin').value.trim(), old=$('#aOld').value, n1=$('#aNew').value, n2=$('#aNew2').value, err=$('#aErr');
+  err.textContent='';
+  if(hash(old)!==a.pass) return err.textContent='Joriy parol noto\'g\'ri';
+  if(!login) return err.textContent='Login bo\'sh bo\'lmasin';
+  if(n1&&n1.length<4) return err.textContent='Yangi parol kamida 4 belgi';
+  if(n1!==n2) return err.textContent='Yangi parollar mos emas';
+  D.auth={login,pass:n1?hash(n1):a.pass}; save();
+  $('#aOld').value=$('#aNew').value=$('#aNew2').value=''; toast('Login va parol yangilandi');
+};
+
+function go(p){
+  $$('.page').forEach(x=>x.classList.toggle('active',x.id==='page-'+p));
+  $$('.nav a').forEach(a=>a.classList.toggle('active',a.dataset.page===p));
+  $('#crumb').textContent=TITLES[p]||'';
+  closeSb(); window.scrollTo(0,0); render();
+}
+$$('.nav a').forEach(a=>a.onclick=e=>{e.preventDefault();location.hash=a.dataset.page;});
+window.onhashchange=()=>go(location.hash.slice(1)||'bosh');
+const sb=$('#sidebar'),ov=$('#overlay');
+$('#burger').onclick=()=>{sb.classList.add('open');ov.classList.add('show');};
+function closeSb(){sb.classList.remove('open');ov.classList.remove('show');}
+ov.onclick=closeSb;
+setInterval(()=>$('#clock').textContent=new Date().toLocaleTimeString('ru-RU'),1000);
+
+/* month controls */
+$$('[data-m]').forEach(b=>b.onclick=()=>{cur=new Date(cur.getFullYear(),cur.getMonth()+ +b.dataset.m,1);render();});
+$('#todayBtn').onclick=()=>{const d=new Date();cur=new Date(d.getFullYear(),d.getMonth(),1);render();};
+$('#yPrev').onclick=()=>{year--;render();};$('#yNext').onclick=()=>{year++;render();};
+
+/* ================= RENDER ================= */
+function render(){
+  const ml=`${MONTHS[cur.getMonth()]} ${cur.getFullYear()}`;
+  $('#monthLbl').textContent=ml; $$('.monthLbl').forEach(e=>e.textContent=ml);
+  $('#greet').textContent=`${D.name||'Foydalanuvchi'}, xush kelibsiz!`;
+  $('#nameInp').value=D.name||'';
+  $('#aLogin').value=(D.auth||DEF.auth).login; $('#uName').textContent=D.name||'Foydalanuvchi'; $('#uAv').textContent=(D.name||'F').split(' ').map(w=>w[0]).join('').slice(0,2).toUpperCase(); $('#lockWho').textContent='Kirilgan: '+(D.auth||DEF.auth).login;
+  const K=D.kirim.filter(inMonth), C=D.chiqim.filter(inMonth);
+  const kSum=K.reduce((a,r)=>a+r.sum,0), cSum=C.reduce((a,r)=>a+r.sum,0);
+  const z=[...D.zahira].sort(byDate).at(-1);
+
+  /* dashboard */
+  $('#sKirim').textContent=fmt(kSum); $('#sKirimN').textContent=`${K.length} ta yozuv`;
+  $('#sChiqim').textContent=fmt(cSum); $('#sChiqimN').textContent=`${C.length} ta yozuv`;
+  $('#sBalans').textContent=fmt(kSum-cSum); $('#sBalans').className='val '+(kSum-cSum>=0?'c-accent':'c-red');
+  $('#sZahira').textContent=fmt(z?z.naqd+z.karta:0); $('#sZahiraN').textContent=z?`Naqd ${fmt(z.naqd)} · Karta ${fmt(z.karta)}`:'Zahira kiritilmagan';
+  bars('#barsKirim',group(K,'src'),kSum,'','sources');
+  bars('#barsChiqim',group(C,'cat'),cSum,'red','cats');
+  $('#mK').textContent=K.length; $('#mC').textContent=C.length;
+  const days=new Set(C.map(r=>r.date)).size||1;
+  $('#mAvg').textContent=fmt(cSum/days); $('#mMax').textContent=fmt(Math.max(0,...C.map(r=>r.sum)));
+
+  /* kirim / chiqim tables */
+  tableRows('#kBody',K.sort(byDate),'src','kirim'); $('#kTotal').textContent=fmt(kSum);
+  tableRows('#cBody',C.sort(byDate),'cat','chiqim'); $('#cTotal').textContent=fmt(cSum);
+  chips('#srcChips',D.sources,'#kSrc'); chips('#catChips',D.cats,'#cCat');
+  $('#srcList').innerHTML=D.sources.map(s=>`<option value="${s.name}">`).join('');
+  $('#catList').innerHTML=D.cats.map(s=>`<option value="${s.name}">`).join('');
+  manage('#srcManage','sources'); manage('#catManage','cats');
+
+  /* zahira */
+  $('#zNaqd').textContent=fmt(z?z.naqd:0); $('#zKarta').textContent=fmt(z?z.karta:0); $('#zJami').textContent=fmt(z?z.naqd+z.karta:0);
+  $('#zBody').innerHTML=[...D.zahira].sort(byDate).map(r=>`<tr><td>${dmy(r.date)}</td><td class="num">${fmt(r.naqd)}</td><td class="num">${fmt(r.karta)}</td><td class="num">${fmt(r.naqd+r.karta)}</td><td><button class="del" data-del="zahira" data-id="${r.id}" aria-label="O'chirish">✕</button></td></tr>`).join('')||`<tr><td colspan="5" class="empty">Hali zahira kiritilmagan</td></tr>`;
+
+  /* hisobot */
+  $('#yearLbl').textContent=year;
+  let tk=0,tc=0,tn=0,rows='';
+  for(let m=0;m<12;m++){
+    const p=`${year}-${String(m+1).padStart(2,'0')}`;
+    const k=D.kirim.filter(r=>r.date.startsWith(p)), c=D.chiqim.filter(r=>r.date.startsWith(p));
+    const ks=k.reduce((a,r)=>a+r.sum,0), cs=c.reduce((a,r)=>a+r.sum,0);
+    tk+=ks;tc+=cs;tn+=k.length+c.length;
+    rows+=`<tr><td>${MONTHS[m]}</td><td class="num c-green">${fmt(ks)}</td><td class="num c-red">${fmt(cs)}</td><td class="num ${ks-cs>=0?'c-accent':'c-red'}">${fmt(ks-cs)}</td><td class="num">${k.length+c.length}</td></tr>`;
+  }
+  $('#hBody').innerHTML=rows;
+  $('#hFoot').innerHTML=`<td>Jami</td><td class="num c-green">${fmt(tk)}</td><td class="num c-red">${fmt(tc)}</td><td class="num">${fmt(tk-tc)}</td><td class="num">${tn}</td>`;
+
+  /* delete buttons */
+  $$('[data-del]').forEach(b=>b.onclick=()=>{if(confirm('Yozuvni o\'chirasizmi?')){D[b.dataset.del]=D[b.dataset.del].filter(r=>r.id!=b.dataset.id);save();render();toast('O\'chirildi');}});
+}
+function bars(sel,entries,total,cls,list){
+  $(sel).innerHTML=entries.length?entries.map(([k,v])=>`<div class="bar"><span>${iconOf(list,k)} ${k}</span><div class="track"><div class="fill ${cls}" style="width:${total?Math.max(6,v/total*100):0}%">${fmt(v)} (${total?Math.round(v/total*100):0}%)</div></div></div>`).join(''):`<div class="empty">Bu oyda yozuv yo'q</div>`;
+}
+function tableRows(sel,rows,key,type){
+  $(sel).innerHTML=rows.length?rows.map(r=>`<tr><td>${dmy(r.date)}</td><td><span class="tag ${type==='kirim'?'b-green':'b-red'}"><span class="ic">${iconOf(type==='kirim'?'sources':'cats',r[key])}</span>${r[key]}</span></td><td class="num">${fmt(r.sum)}</td><td style="color:var(--muted)">${r.note||''}</td><td><button class="del" data-del="${type}" data-id="${r.id}" aria-label="O'chirish">✕</button></td></tr>`).join(''):`<tr><td colspan="5" class="empty">Bu oyda yozuv yo'q — yuqoridan qo'shing</td></tr>`;
+}
+function chips(sel,list,inp){
+  const el=$(sel), v=$(inp).value, icoBtn=inp==='#kSrc'?'#kIco':'#cIco', sumInp=inp==='#kSrc'?'#kSum':'#cSum';
+  el.innerHTML=list.map(s=>`<button class="chip ${s.name===v?'on':''}" data-v="${s.name}" data-i="${s.icon}"><span class="ic">${s.icon}</span>${s.name}</button>`).join('');
+  el.querySelectorAll('.chip').forEach(c=>c.onclick=()=>{$(inp).value=c.dataset.v;$(icoBtn).textContent=c.dataset.i;el.querySelectorAll('.chip').forEach(x=>x.classList.toggle('on',x===c));$(sumInp).focus();});
+}
+function manage(sel,field){
+  const el=$(sel);
+  el.innerHTML=D[field].map((s,i)=>`<span class="chip"><button data-ico="${i}" class="ic" title="Ikonkani o'zgartirish">${s.icon}</button>${s.name}<button data-i="${i}" aria-label="O'chirish" style="color:var(--muted)">✕</button></span>`).join('')||'<span class="empty">Ro\'yxat bo\'sh</span>';
+  el.querySelectorAll('[data-i]').forEach(b=>b.onclick=()=>{if(confirm(`"${D[field][b.dataset.i].name}" o'chirilsinmi? (yozuvlar qoladi)`)){D[field].splice(b.dataset.i,1);save();render();}});
+  el.querySelectorAll('[data-ico]').forEach(b=>b.onclick=()=>{const it=D[field][b.dataset.ico];openPicker(it.name,it.icon,e=>{it.icon=e;save();render();});});
+}
+
+/* ================= ADD ================= */
+function addEntry(type){
+  const p=type==='kirim'?{d:'#kDate',t:'#kSrc',s:'#kSum',n:'#kNote',key:'src',list:'sources'}:{d:'#cDate',t:'#cCat',s:'#cSum',n:'#cNote',key:'cat',list:'cats'};
+  const date=$(p.d).value, tag=$(p.t).value.trim(), sum=+$(p.s).value;
+  if(!date) return toast('Sanani tanlang');
+  if(!tag) return toast(type==='kirim'?'Manbani kiriting':'Kategoriyani kiriting');
+  if(!(sum>0)) return toast('Summani kiriting');
+  const row={id:uid(),date,sum,note:$(p.n).value.trim()}; row[p.key]=tag;
+  D[type].push(row);
+  const ico=$(type==='kirim'?'#kIco':'#cIco').textContent; const ex=D[p.list].find(x=>x.name===tag); if(!ex) D[p.list].push({name:tag,icon:ico}); else if(ex.icon!==ico) ex.icon=ico;
+  save(); $(p.s).value=''; $(p.n).value=''; render(); toast('Qo\'shildi: '+fmt(sum)+' so\'m'); $(p.s).focus();
+}
+$('#kAdd').onclick=()=>addEntry('kirim'); $('#cAdd').onclick=()=>addEntry('chiqim');
+['#kSum','#kNote'].forEach(s=>$(s).onkeydown=e=>{if(e.key==='Enter')addEntry('kirim');});
+['#cSum','#cNote'].forEach(s=>$(s).onkeydown=e=>{if(e.key==='Enter')addEntry('chiqim');});
+$('#zAdd').onclick=()=>{
+  const date=$('#zDate').value; if(!date) return toast('Sanani tanlang');
+  D.zahira.push({id:uid(),date,naqd:+$('#zN').value||0,karta:+$('#zK').value||0}); save(); render(); toast('Zahira saqlandi');
+};
+$('#srcNewBtn').onclick=()=>{const v=$('#srcNew').value.trim();if(v&&!D.sources.some(x=>x.name===v)){D.sources.push({name:v,icon:$('#srcNewIco').textContent});$('#srcNew').value='';save();render();}};
+$('#catNewBtn').onclick=()=>{const v=$('#catNew').value.trim();if(v&&!D.cats.some(x=>x.name===v)){D.cats.push({name:v,icon:$('#catNewIco').textContent});$('#catNew').value='';save();render();}};
+$('#nameBtn').onclick=()=>{D.name=$('#nameInp').value.trim()||DEF.name;save();render();toast('Saqlandi');};
+
+/* ================= IMPORT / EXPORT ================= */
+$('#expBtn').onclick=()=>{
+  const blob=new Blob([JSON.stringify(D,null,2)],{type:'application/json'});
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=`kirim_chiqim_${todayISO()}.json`;a.click();toast('JSON yuklab olindi');
+};
+$('#impFile').onchange=e=>{
+  const f=e.target.files[0]; if(!f) return;
+  const r=new FileReader(); r.onload=()=>{try{const j=JSON.parse(r.result);if(!j.kirim||!j.chiqim) throw 0;D=Object.assign({},DEF,j);migrate();save();render();toast('Ma\'lumot tiklandi');}catch{toast('Fayl noto\'g\'ri formatda');}};
+  r.readAsText(f); e.target.value='';
+};
+$('#resetBtn').onclick=()=>{if(confirm('Barcha yozuvlar o\'chiriladi. Davom etasizmi?')){const a=D.auth;D=structuredClone(DEF);D.auth=a;save();render();toast('Tozalandi');}};
+
+/* ================= INIT ================= */
+['#kDate','#cDate','#zDate'].forEach(s=>$(s).value=todayISO());
+if('serviceWorker' in navigator&&location.protocol.startsWith('http')){navigator.serviceWorker.register('sw.js').catch(()=>{});}
+if(unlocked){showApp();go(location.hash.slice(1)||'bosh');}else{render();showLogin();}
+</script>
+</body>
+</html>
