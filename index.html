@@ -423,7 +423,7 @@ function group(rows,key){const m={};rows.forEach(r=>m[r[key]]=(m[r[key]]||0)+r.s
 
 /* ================= ICON PICKER ================= */
 const EMOJIS=['🏫','🏥','🚑','💼','🏢','🏭','🏪','🏛️','💻','⚙️','💰','🏦','📈','🎁','👨‍⚕️','🎓',
-'🛒','🍞','☕','🍽️','🚕','🚌','⛽','🚗','💡','🏠','🔑','👕','💊','🩺','📚','📱','🎉','✈️','🔧','💇','🐾','🎮','📦','🍒','🎗️'];
+'🛒','🍞','☕','🍽️','🚕','🚌','⛽','🚗','💡','🏠','🔑','👕','💊','🩺','📚','📱','🎉','✈️','🔧','💇','🐾','🎮','📦','🍒','🚌','🎗️'];
 let pickCb=null, pickSel='';
 function openPicker(title,current,cb){
   pickCb=cb; pickSel=current||''; $('#pickTitle').textContent=title; $('#pickCustom').value='';
