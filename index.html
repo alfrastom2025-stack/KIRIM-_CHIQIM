@@ -88,7 +88,7 @@ h1{font-family:Lora,serif;font-size:26px;font-weight:700;margin-bottom:2px}
 .mini b{font-family:Lora,serif;font-size:24px}
 
 /* ---------- forms ---------- */
-.form{display:grid;grid-template-columns:150px 1fr 170px 1fr auto;gap:10px;align-items:end}
+.form{display:grid;grid-template-columns:150px 1fr 170px auto 1fr auto;gap:10px;align-items:end}
 .field label{display:block;font-size:12px;color:var(--muted);margin-bottom:5px}
 .field input,.field select{width:100%;height:40px;border:1px solid var(--line);border-radius:9px;padding:0 12px;background:#fff}
 .field input:focus,.field select:focus{outline:2px solid var(--accent);outline-offset:-1px;border-color:transparent}
@@ -112,6 +112,14 @@ h1{font-family:Lora,serif;font-size:26px;font-weight:700;margin-bottom:2px}
 .picker .grid8 button.on{border-color:var(--accent);background:var(--accent-soft)}
 .picker .row{display:flex;gap:8px}.picker .row input{flex:1;height:40px;border:1px solid var(--line);border-radius:9px;padding:0 12px;font-size:18px;text-align:center}
 .tag .ic{margin-right:5px}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:9px;overflow:hidden;height:40px}
+.seg button{padding:0 12px;font-weight:600;font-size:13px;color:var(--muted);background:#fff;border-right:1px solid var(--line);white-space:nowrap}
+.seg button:last-child{border-right:0}
+.seg button.on{background:var(--accent-soft);color:var(--accent)}
+.turbtn{border:1px solid var(--line);border-radius:999px;padding:2px 8px;font-size:12px;font-weight:600;background:#fff;white-space:nowrap}
+.turbtn.naqd{color:var(--green);border-color:#bfe3cf}.turbtn.plastik{color:var(--blue);border-color:#c5d5f5}
+.turbtn:hover{background:var(--bg)}
+.split{color:var(--muted);font-size:12.5px;margin-top:6px}
 .chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 13px;font-size:13px;font-weight:500;display:inline-flex;gap:6px;align-items:center}
 .chip.on{background:var(--accent-soft);border-color:var(--accent);color:var(--accent)}
 .month{display:inline-flex;align-items:center;gap:4px;border:1px solid var(--line);border-radius:9px;background:#fff;height:36px;padding:0 6px}
@@ -184,7 +192,7 @@ textarea{width:100%;min-height:120px;border:1px solid var(--line);border-radius:
   .stat .val{font-size:26px}
   .bar{grid-template-columns:100px 1fr}
   table{font-size:13px}
-  th:nth-child(4),td:nth-child(4){display:none} /* izoh ustuni telefonda yashirin */
+  th:nth-child(5),td:nth-child(5){display:none} /* izoh ustuni telefonda yashirin */
 }
 @media (max-width:480px){.g4{grid-template-columns:1fr 1fr}.mini{grid-template-columns:1fr 1fr}.form{grid-template-columns:1fr}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
@@ -200,8 +208,8 @@ textarea{width:100%;min-height:120px;border:1px solid var(--line);border-radius:
     <div class="sec">Platforma</div>
     <a href="#bosh" data-page="bosh" class="active"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>Bosh sahifa</a>
     <div class="sec">Kirim-chiqim</div>
-    <a href="#kirim" data-page="kirim"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"/></svg>Kirim</a>
     <a href="#chiqim" data-page="chiqim"><svg viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg>Chiqim</a>
+    <a href="#kirim" data-page="kirim"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"/></svg>Kirim</a>
     <a href="#zahira" data-page="zahira"><svg viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="13" rx="2"/><path d="M2 10h20M6 15h4"/></svg>Zahira</a>
     <div class="sec">Hisobotlar</div>
     <a href="#hisobot" data-page="hisobot"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>Oylik hisobot</a>
@@ -259,13 +267,14 @@ textarea{width:100%;min-height:120px;border:1px solid var(--line);border-radius:
           <div class="field"><label>Sana</label><input type="date" id="kDate"></div>
           <div class="field"><label>Manba</label><div class="withico"><button class="icobtn" id="kIco" type="button" title="Ikonka tanlash">💼</button><input id="kSrc" placeholder="mas. AFU" list="srcList" autocomplete="off"><datalist id="srcList"></datalist></div></div>
           <div class="field"><label>Summa (so'm)</label><input type="number" inputmode="numeric" id="kSum" placeholder="0"></div>
+          <div class="field"><label>To'lov turi</label><div class="seg" id="kTur"><button type="button" data-t="naqd">💵 Naqd</button><button type="button" data-t="plastik">💳 Plastik</button></div></div>
           <div class="field"><label>Izoh</label><input id="kNote" placeholder="ixtiyoriy"></div>
           <button class="btn" id="kAdd">+ Qo'shish</button>
         </div>
         <div class="chips" id="srcChips"></div>
       </div>
       <div class="card mt"><div class="toolbar" style="margin-bottom:8px"><h3 style="flex:1">Kirimlar ro'yxati</h3><div class="month"><button data-m="-1">‹</button><b class="monthLbl"></b><button data-m="1">›</button></div></div>
-        <div style="overflow:auto"><table><thead><tr><th>Sana</th><th>Manba</th><th class="num">Summa</th><th>Izoh</th><th></th></tr></thead><tbody id="kBody"></tbody><tfoot><tr><td colspan="2">Jami</td><td class="num" id="kTotal">0</td><td colspan="2"></td></tr></tfoot></table></div>
+        <div style="overflow:auto"><table><thead><tr><th>Sana</th><th>Manba</th><th class="num">Summa</th><th>Turi</th><th>Izoh</th><th></th></tr></thead><tbody id="kBody"></tbody><tfoot><tr><td colspan="2">Jami</td><td class="num" id="kTotal">0</td><td colspan="3" id="kSplit"></td></tr></tfoot></table></div>
       </div>
     </section>
 
@@ -277,13 +286,14 @@ textarea{width:100%;min-height:120px;border:1px solid var(--line);border-radius:
           <div class="field"><label>Sana</label><input type="date" id="cDate"></div>
           <div class="field"><label>Kategoriya</label><div class="withico"><button class="icobtn" id="cIco" type="button" title="Ikonka tanlash">🛒</button><input id="cCat" placeholder="mas. Oziq-ovqat" list="catList" autocomplete="off"><datalist id="catList"></datalist></div></div>
           <div class="field"><label>Summa (so'm)</label><input type="number" inputmode="numeric" id="cSum" placeholder="0"></div>
+          <div class="field"><label>To'lov turi</label><div class="seg" id="cTur"><button type="button" data-t="naqd">💵 Naqd</button><button type="button" data-t="plastik">💳 Plastik</button></div></div>
           <div class="field"><label>Izoh</label><input id="cNote" placeholder="ixtiyoriy"></div>
           <button class="btn" id="cAdd">+ Qo'shish</button>
         </div>
         <div class="chips" id="catChips"></div>
       </div>
       <div class="card mt"><div class="toolbar" style="margin-bottom:8px"><h3 style="flex:1">Chiqimlar ro'yxati</h3><div class="month"><button data-m="-1">‹</button><b class="monthLbl"></b><button data-m="1">›</button></div></div>
-        <div style="overflow:auto"><table><thead><tr><th>Sana</th><th>Kategoriya</th><th class="num">Summa</th><th>Izoh</th><th></th></tr></thead><tbody id="cBody"></tbody><tfoot><tr><td colspan="2">Jami</td><td class="num" id="cTotal">0</td><td colspan="2"></td></tr></tfoot></table></div>
+        <div style="overflow:auto"><table><thead><tr><th>Sana</th><th>Kategoriya</th><th class="num">Summa</th><th>Turi</th><th>Izoh</th><th></th></tr></thead><tbody id="cBody"></tbody><tfoot><tr><td colspan="2">Jami</td><td class="num" id="cTotal">0</td><td colspan="3" id="cSplit"></td></tr></tfoot></table></div>
       </div>
     </section>
 
@@ -382,8 +392,8 @@ let USER=null;
 /* ================= DATA ================= */
 const DEF={name:'',sources:[{name:'Ish',icon:'💼'}],cats:[{name:'Oziq-ovqat',icon:'🛒'},{name:'Transport',icon:'🚕'},{name:'Kommunal',icon:'💡'},{name:'Kiyim',icon:'👕'},{name:'Sog\'liq',icon:'💊'},{name:'Ta\'lim',icon:'📚'},{name:'Boshqa',icon:'📦'}],kirim:[],chiqim:[],zahira:[]};
 let D=structuredClone(DEF);
-const rowK=r=>({id:r.id,date:r.sana,src:r.manba,sum:+r.summa,note:r.izoh||''});
-const rowC=r=>({id:r.id,date:r.sana,cat:r.kategoriya,sum:+r.summa,note:r.izoh||''});
+const rowK=r=>({id:r.id,date:r.sana,src:r.manba,sum:+r.summa,note:r.izoh||'',tur:r.tur||'naqd'});
+const rowC=r=>({id:r.id,date:r.sana,cat:r.kategoriya,sum:+r.summa,note:r.izoh||'',tur:r.tur||'naqd'});
 const rowZ=r=>({id:r.id,date:r.sana,naqd:+r.naqd,karta:+r.karta});
 function migrate(){['sources','cats'].forEach(f=>{D[f]=(D[f]||[]).map(x=>typeof x==='string'?{name:x,icon:f==='sources'?'💼':'🛒'}:x);});}
 async function loadAll(){
@@ -418,12 +428,29 @@ const byDate=(a,b)=>a.date<b.date?-1:a.date>b.date?1:a.id-b.id;
 const uid=()=>Date.now()+Math.floor(Math.random()*1000);
 function toast(t){const e=$('#toast');e.textContent=t;e.classList.add('show');clearTimeout(e._t);e._t=setTimeout(()=>e.classList.remove('show'),2200);}
 const iconOf=(list,name)=>{const f=D[list].find(x=>x.name===name);return f?f.icon:(list==='sources'?'💼':'🛒');};
+const TUR={naqd:'💵 Naqd',plastik:'💳 Plastik'};
+const sumBy=(rows,t)=>rows.filter(r=>r.tur===t).reduce((a,r)=>a+r.sum,0);
+const splitTxt=rows=>`💵 ${fmt(sumBy(rows,'naqd'))} · 💳 ${fmt(sumBy(rows,'plastik'))}`;
+const tur={kirim:'naqd',chiqim:'naqd'};
+try{Object.assign(tur,JSON.parse(localStorage.getItem('kc_tur')||'{}'));}catch{}
+function setTur(type,t){tur[type]=t;try{localStorage.setItem('kc_tur',JSON.stringify(tur));}catch{}
+  $(type==='kirim'?'#kTur':'#cTur').querySelectorAll('button').forEach(b=>b.classList.toggle('on',b.dataset.t===t));}
+$('#kTur').querySelectorAll('button').forEach(b=>b.onclick=()=>setTur('kirim',b.dataset.t));
+$('#cTur').querySelectorAll('button').forEach(b=>b.onclick=()=>setTur('chiqim',b.dataset.t));
+setTur('kirim',tur.kirim); setTur('chiqim',tur.chiqim);
+async function toggleTur(table,id){
+  const r=D[table].find(x=>x.id==id); if(!r) return;
+  const nt=r.tur==='naqd'?'plastik':'naqd';
+  const {error}=await sb.from(table).update({tur:nt}).eq('id',id);
+  if(error) return toast('Xato: '+error.message);
+  r.tur=nt; render();
+}
 function group(rows,key){const m={};rows.forEach(r=>m[r[key]]=(m[r[key]]||0)+r.sum);return Object.entries(m).sort((a,b)=>b[1]-a[1]);}
 
 
 /* ================= ICON PICKER ================= */
 const EMOJIS=['🏫','🏥','🚑','💼','🏢','🏭','🏪','🏛️','💻','⚙️','💰','🏦','📈','🎁','👨‍⚕️','🎓',
-'🛒','🍞','☕','🍽️','🚕','🚌','⛽','🚗','💡','🏠','🔑','👕','💊','🩺','📚','📱','🎉','✈️','💳','🔧','💇','🐾','🎮','📦','🍒','🚌','➡️','🍜','🎗️'];
+'🛒','🍞','☕','🍽️','🚕','🚌','⛽','🚗','💡','🏠','🔑','👕','💊','🩺','📚','📱','🎉','✈️','🔧','💇','🐾','🎮','📦','🎗️'];
 let pickCb=null, pickSel='';
 function openPicker(title,current,cb){
   pickCb=cb; pickSel=current||''; $('#pickTitle').textContent=title; $('#pickCustom').value='';
@@ -477,8 +504,8 @@ function render(){
   const z=[...D.zahira].sort(byDate).at(-1);
 
   /* dashboard */
-  $('#sKirim').textContent=fmt(kSum); $('#sKirimN').textContent=`${K.length} ta yozuv`;
-  $('#sChiqim').textContent=fmt(cSum); $('#sChiqimN').textContent=`${C.length} ta yozuv`;
+  $('#sKirim').textContent=fmt(kSum); $('#sKirimN').textContent=`${K.length} ta yozuv · ${splitTxt(K)}`;
+  $('#sChiqim').textContent=fmt(cSum); $('#sChiqimN').textContent=`${C.length} ta yozuv · ${splitTxt(C)}`;
   $('#sBalans').textContent=fmt(kSum-cSum); $('#sBalans').className='val '+(kSum-cSum>=0?'c-accent':'c-red');
   $('#sZahira').textContent=fmt(z?z.naqd+z.karta:0); $('#sZahiraN').textContent=z?`Naqd ${fmt(z.naqd)} · Karta ${fmt(z.karta)}`:'Zahira kiritilmagan';
   bars('#barsKirim',group(K,'src'),kSum,'','sources');
@@ -488,8 +515,8 @@ function render(){
   $('#mAvg').textContent=fmt(cSum/days); $('#mMax').textContent=fmt(Math.max(0,...C.map(r=>r.sum)));
 
   /* kirim / chiqim tables */
-  tableRows('#kBody',K.sort(byDate),'src','kirim'); $('#kTotal').textContent=fmt(kSum);
-  tableRows('#cBody',C.sort(byDate),'cat','chiqim'); $('#cTotal').textContent=fmt(cSum);
+  tableRows('#kBody',K.sort(byDate),'src','kirim'); $('#kTotal').textContent=fmt(kSum); $('#kSplit').textContent=splitTxt(K);
+  tableRows('#cBody',C.sort(byDate),'cat','chiqim'); $('#cTotal').textContent=fmt(cSum); $('#cSplit').textContent=splitTxt(C);
   chips('#srcChips',D.sources,'#kSrc'); chips('#catChips',D.cats,'#cCat');
   $('#srcList').innerHTML=D.sources.map(s=>`<option value="${s.name}">`).join('');
   $('#catList').innerHTML=D.cats.map(s=>`<option value="${s.name}">`).join('');
@@ -514,12 +541,13 @@ function render(){
 
   /* delete buttons */
   $$('[data-del]').forEach(b=>b.onclick=()=>{if(confirm('Yozuvni o\'chirasizmi?'))delRow(b.dataset.del,b.dataset.id);});
+  $$('[data-tur]').forEach(b=>b.onclick=()=>toggleTur(b.dataset.tur,b.dataset.id));
 }
 function bars(sel,entries,total,cls,list){
   $(sel).innerHTML=entries.length?entries.map(([k,v])=>`<div class="bar"><span>${iconOf(list,k)} ${k}</span><div class="track"><div class="fill ${cls}" style="width:${total?Math.max(6,v/total*100):0}%">${fmt(v)} (${total?Math.round(v/total*100):0}%)</div></div></div>`).join(''):`<div class="empty">Bu oyda yozuv yo'q</div>`;
 }
 function tableRows(sel,rows,key,type){
-  $(sel).innerHTML=rows.length?rows.map(r=>`<tr><td>${dmy(r.date)}</td><td><span class="tag ${type==='kirim'?'b-green':'b-red'}"><span class="ic">${iconOf(type==='kirim'?'sources':'cats',r[key])}</span>${r[key]}</span></td><td class="num">${fmt(r.sum)}</td><td style="color:var(--muted)">${r.note||''}</td><td><button class="del" data-del="${type}" data-id="${r.id}" aria-label="O'chirish">✕</button></td></tr>`).join(''):`<tr><td colspan="5" class="empty">Bu oyda yozuv yo'q — yuqoridan qo'shing</td></tr>`;
+  $(sel).innerHTML=rows.length?rows.map(r=>`<tr><td>${dmy(r.date)}</td><td><span class="tag ${type==='kirim'?'b-green':'b-red'}"><span class="ic">${iconOf(type==='kirim'?'sources':'cats',r[key])}</span>${r[key]}</span></td><td class="num">${fmt(r.sum)}</td><td><button class="turbtn ${r.tur}" data-tur="${type}" data-id="${r.id}" title="Bosib almashtiring">${TUR[r.tur]}</button></td><td style="color:var(--muted)">${r.note||''}</td><td><button class="del" data-del="${type}" data-id="${r.id}" aria-label="O'chirish">✕</button></td></tr>`).join(''):`<tr><td colspan="6" class="empty">Bu oyda yozuv yo'q — yuqoridan qo'shing</td></tr>`;
 }
 function chips(sel,list,inp){
   const el=$(sel), v=$(inp).value, icoBtn=inp==='#kSrc'?'#kIco':'#cIco', sumInp=inp==='#kSrc'?'#kSum':'#cSum';
@@ -581,7 +609,7 @@ async function addEntry(type){
   if(!date) return toast('Sanani tanlang');
   if(!tag) return toast(type==='kirim'?'Manbani kiriting':'Kategoriyani kiriting');
   if(!(sum>0)) return toast('Summani kiriting');
-  const row={sana:date,summa:sum,izoh:$(p.n).value.trim()}; row[p.col]=tag;
+  const row={sana:date,summa:sum,izoh:$(p.n).value.trim(),tur:tur[type]}; row[p.col]=tag;
   const {data,error}=await sb.from(type).insert(row).select().single();
   if(error) return toast('Xato: '+error.message);
   D[type].push(p.map(data));
@@ -619,8 +647,8 @@ $('#impFile').onchange=e=>{
       const j=JSON.parse(r.result); if(!j.kirim||!j.chiqim) throw 0;
       if(!confirm(`${j.kirim.length} kirim, ${j.chiqim.length} chiqim, ${(j.zahira||[]).length} zahira yozuvi bazaga QO'SHILADI (mavjudlari qoladi). Davom etasizmi?`)) return;
       busy(true);
-      const K=j.kirim.map(x=>({sana:x.date,manba:x.src,summa:x.sum,izoh:x.note||''}));
-      const C=j.chiqim.map(x=>({sana:x.date,kategoriya:x.cat,summa:x.sum,izoh:x.note||''}));
+      const K=j.kirim.map(x=>({sana:x.date,manba:x.src,summa:x.sum,izoh:x.note||'',tur:x.tur==='plastik'?'plastik':'naqd'}));
+      const C=j.chiqim.map(x=>({sana:x.date,kategoriya:x.cat,summa:x.sum,izoh:x.note||'',tur:x.tur==='plastik'?'plastik':'naqd'}));
       const Z=(j.zahira||[]).map(x=>({sana:x.date,naqd:x.naqd||0,karta:x.karta||0}));
       for(const [t,rows] of [['kirim',K],['chiqim',C],['zahira',Z]]){ if(rows.length){const {error}=await sb.from(t).insert(rows); if(error) throw error;} }
       if(j.name||j.sources||j.cats){ if(j.name)D.name=j.name; if(j.sources)D.sources=j.sources; if(j.cats)D.cats=j.cats; migrate(); await saveProfil(); }
