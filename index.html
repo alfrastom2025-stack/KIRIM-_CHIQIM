@@ -299,22 +299,33 @@ textarea{width:100%;min-height:120px;border:1px solid var(--line);border-radius:
 
     <!-- ---------- ZAHIRA ---------- -->
     <section class="page" id="page-zahira">
-      <h1>Zahira</h1><div class="sub">Naqd pul va karta qoldiqlari</div>
+      <h1>Zahira</h1><div class="sub">Naqd va plastik qoldig'i — kirim, chiqim va o'tkazmalar asosida avtomatik hisoblanadi</div>
       <div class="grid g3">
-        <div class="card stat"><div class="lbl">Naqd <span class="ico b-green"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="11" rx="2"/><circle cx="12" cy="12.5" r="2.5"/></svg></span></div><div class="val c-green" id="zNaqd">0</div></div>
-        <div class="card stat"><div class="lbl">Karta <span class="ico b-blue"><svg viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="13" rx="2"/><path d="M2 10h20"/></svg></span></div><div class="val c-blue" id="zKarta">0</div></div>
-        <div class="card stat"><div class="lbl">Jami zahira <span class="ico b-amber"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/></svg></span></div><div class="val c-amber" id="zJami">0</div></div>
+        <div class="card stat"><div class="lbl">💵 Naqd <span class="ico b-green"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="11" rx="2"/><circle cx="12" cy="12.5" r="2.5"/></svg></span></div><div class="val c-green" id="zNaqd">0</div><div class="note" id="zNaqdN"></div></div>
+        <div class="card stat"><div class="lbl">💳 Plastik <span class="ico b-blue"><svg viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="13" rx="2"/><path d="M2 10h20"/></svg></span></div><div class="val c-blue" id="zKarta">0</div><div class="note" id="zKartaN"></div></div>
+        <div class="card stat"><div class="lbl">Jami zahira <span class="ico b-amber"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/></svg></span></div><div class="val c-amber" id="zJami">0</div><div class="note" id="zAnchorN"></div></div>
       </div>
-      <div class="card mt"><h3>Qoldiqni yangilash</h3><div class="hint">Hozirgi haqiqiy qoldiqni kiriting — platforma tarixini saqlab qoladi</div>
-        <div class="form" style="grid-template-columns:150px 1fr 1fr auto">
-          <div class="field"><label>Sana</label><input type="date" id="zDate"></div>
-          <div class="field"><label>Naqd (so'm)</label><input type="number" inputmode="numeric" id="zN" placeholder="0"></div>
-          <div class="field"><label>Karta (so'm)</label><input type="number" inputmode="numeric" id="zK" placeholder="0"></div>
-          <button class="btn" id="zAdd">Saqlash</button>
+      <div class="grid g2 mt">
+        <div class="card"><h3>🔁 O'tkazma</h3><div class="hint">Bankomatdan yechish yoki kartaga solish — kirim/chiqim hisoblanmaydi, faqat pul joyi o'zgaradi</div>
+          <div class="form" style="grid-template-columns:150px auto 1fr auto">
+            <div class="field"><label>Sana</label><input type="date" id="oDate"></div>
+            <div class="field"><label>Yo'nalish</label><div class="seg" id="oDir"><button type="button" data-t="karta_naqd" class="on">💳 → 💵</button><button type="button" data-t="naqd_karta">💵 → 💳</button></div></div>
+            <div class="field"><label>Summa (so'm)</label><input type="number" inputmode="numeric" id="oSum" placeholder="0"></div>
+            <button class="btn" id="oAdd">Saqlash</button>
+          </div>
+          <div class="form mt" style="grid-template-columns:1fr"><div class="field"><label>Izoh</label><input id="oNote" placeholder="mas. bankomat"></div></div>
+        </div>
+        <div class="card"><h3>✏️ Qoldiqni tuzatish</h3><div class="hint">Birinchi marta yoki hisoblangan qoldiq haqiqiy puldan farq qilsa — hozirgi haqiqiy summani yozing. Hisob shu nuqtadan boshlanadi.</div>
+          <div class="form" style="grid-template-columns:150px 1fr 1fr auto">
+            <div class="field"><label>Sana</label><input type="date" id="zDate"></div>
+            <div class="field"><label>💵 Naqd (so'm)</label><input type="number" inputmode="numeric" id="zN" placeholder="0"></div>
+            <div class="field"><label>💳 Plastik (so'm)</label><input type="number" inputmode="numeric" id="zK" placeholder="0"></div>
+            <button class="btn" id="zAdd">Saqlash</button>
+          </div>
         </div>
       </div>
-      <div class="card mt"><h3>Zahira tarixi</h3>
-        <div style="overflow:auto"><table><thead><tr><th>Sana</th><th class="num">Naqd</th><th class="num">Karta</th><th class="num">Jami</th><th></th></tr></thead><tbody id="zBody"></tbody></table></div>
+      <div class="card mt"><h3>Zahira tarixi</h3><div class="hint">Tuzatishlar va o'tkazmalar (yangi → eski)</div>
+        <div style="overflow:auto"><table><thead><tr><th>Sana</th><th>Turi</th><th>Tafsilot</th><th class="num">💵 Naqd</th><th class="num">💳 Plastik</th><th></th></tr></thead><tbody id="zBody"></tbody></table></div>
       </div>
     </section>
 
@@ -392,9 +403,9 @@ let USER=null;
 /* ================= DATA ================= */
 const DEF={name:'',sources:[{name:'Ish',icon:'💼'}],cats:[{name:'Oziq-ovqat',icon:'🛒'},{name:'Transport',icon:'🚕'},{name:'Kommunal',icon:'💡'},{name:'Kiyim',icon:'👕'},{name:'Sog\'liq',icon:'💊'},{name:'Ta\'lim',icon:'📚'},{name:'Boshqa',icon:'📦'}],kirim:[],chiqim:[],zahira:[]};
 let D=structuredClone(DEF);
-const rowK=r=>({id:r.id,date:r.sana,src:r.manba,sum:+r.summa,note:r.izoh||'',tur:r.tur||'naqd'});
-const rowC=r=>({id:r.id,date:r.sana,cat:r.kategoriya,sum:+r.summa,note:r.izoh||'',tur:r.tur||'naqd'});
-const rowZ=r=>({id:r.id,date:r.sana,naqd:+r.naqd,karta:+r.karta});
+const rowK=r=>({id:r.id,date:r.sana,src:r.manba,sum:+r.summa,note:r.izoh||'',tur:r.tur||'naqd',ts:r.yaratilgan||''});
+const rowC=r=>({id:r.id,date:r.sana,cat:r.kategoriya,sum:+r.summa,note:r.izoh||'',tur:r.tur||'naqd',ts:r.yaratilgan||''});
+const rowZ=r=>({id:r.id,date:r.sana,naqd:+r.naqd,karta:+r.karta,turi:r.turi||'tuzatish',dir:r.yonalish||null,sum:+(r.summa||0),note:r.izoh||'',ts:r.yaratilgan||''});
 function migrate(){['sources','cats'].forEach(f=>{D[f]=(D[f]||[]).map(x=>typeof x==='string'?{name:x,icon:f==='sources'?'💼':'🛒'}:x);});}
 async function loadAll(){
   busy(true);
@@ -431,6 +442,17 @@ const iconOf=(list,name)=>{const f=D[list].find(x=>x.name===name);return f?f.ico
 const TUR={naqd:'💵 Naqd',plastik:'💳 Plastik'};
 const sumBy=(rows,t)=>rows.filter(r=>r.tur===t).reduce((a,r)=>a+r.sum,0);
 const splitTxt=rows=>`💵 ${fmt(sumBy(rows,'naqd'))} · 💳 ${fmt(sumBy(rows,'plastik'))}`;
+function balance(){
+  const anchors=D.zahira.filter(z=>z.turi==='tuzatish').sort((a,b)=>a.ts<b.ts?-1:1);
+  const A=anchors.at(-1); const T0=A?A.ts:''; let naqd=A?A.naqd:0, karta=A?A.karta:0;
+  const after=r=>r.ts>T0;
+  D.kirim.filter(after).forEach(r=>{ if(r.tur==='plastik') karta+=r.sum; else naqd+=r.sum; });
+  D.chiqim.filter(after).forEach(r=>{ if(r.tur==='plastik') karta-=r.sum; else naqd-=r.sum; });
+  D.zahira.filter(z=>z.turi==='otkazma'&&after(z)).forEach(z=>{ if(z.dir==='karta_naqd'){karta-=z.sum;naqd+=z.sum;} else {naqd-=z.sum;karta+=z.sum;} });
+  return {naqd,karta,anchor:A};
+}
+let oDir='karta_naqd';
+$('#oDir').querySelectorAll('button').forEach(b=>b.onclick=()=>{oDir=b.dataset.t;$('#oDir').querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===b));});
 const tur={kirim:'naqd',chiqim:'naqd'};
 try{Object.assign(tur,JSON.parse(localStorage.getItem('kc_tur')||'{}'));}catch{}
 function setTur(type,t){tur[type]=t;try{localStorage.setItem('kc_tur',JSON.stringify(tur));}catch{}
@@ -501,13 +523,13 @@ function render(){
   $('#aLogin').value=USER?.email||''; $('#lockWho').textContent='Kirilgan: '+(USER?.email||''); $('#uName').textContent=D.name||'Foydalanuvchi'; setWho(D.name||''); try{if(USER)localStorage.setItem('kc_last_name',D.name||'');}catch{}  $('#uAv').textContent=(D.name||'F').split(' ').map(w=>w[0]).join('').slice(0,2).toUpperCase();
   const K=D.kirim.filter(inMonth), C=D.chiqim.filter(inMonth);
   const kSum=K.reduce((a,r)=>a+r.sum,0), cSum=C.reduce((a,r)=>a+r.sum,0);
-  const z=[...D.zahira].sort(byDate).at(-1);
+  const B=balance();
 
   /* dashboard */
   $('#sKirim').textContent=fmt(kSum); $('#sKirimN').textContent=`${K.length} ta yozuv · ${splitTxt(K)}`;
   $('#sChiqim').textContent=fmt(cSum); $('#sChiqimN').textContent=`${C.length} ta yozuv · ${splitTxt(C)}`;
   $('#sBalans').textContent=fmt(kSum-cSum); $('#sBalans').className='val '+(kSum-cSum>=0?'c-accent':'c-red');
-  $('#sZahira').textContent=fmt(z?z.naqd+z.karta:0); $('#sZahiraN').textContent=z?`Naqd ${fmt(z.naqd)} · Karta ${fmt(z.karta)}`:'Zahira kiritilmagan';
+  $('#sZahira').textContent=fmt(B.naqd+B.karta); $('#sZahiraN').textContent=B.anchor?`💵 ${fmt(B.naqd)} · 💳 ${fmt(B.karta)}`:'Zahira sahifasida qoldiqni kiriting';
   bars('#barsKirim',group(K,'src'),kSum,'','sources');
   bars('#barsChiqim',group(C,'cat'),cSum,'red','cats');
   $('#mK').textContent=K.length; $('#mC').textContent=C.length;
@@ -523,8 +545,13 @@ function render(){
   manage('#srcManage','sources'); manage('#catManage','cats');
 
   /* zahira */
-  $('#zNaqd').textContent=fmt(z?z.naqd:0); $('#zKarta').textContent=fmt(z?z.karta:0); $('#zJami').textContent=fmt(z?z.naqd+z.karta:0);
-  $('#zBody').innerHTML=[...D.zahira].sort(byDate).map(r=>`<tr><td>${dmy(r.date)}</td><td class="num">${fmt(r.naqd)}</td><td class="num">${fmt(r.karta)}</td><td class="num">${fmt(r.naqd+r.karta)}</td><td><button class="del" data-del="zahira" data-id="${r.id}" aria-label="O'chirish">✕</button></td></tr>`).join('')||`<tr><td colspan="5" class="empty">Hali zahira kiritilmagan</td></tr>`;
+  $('#zNaqd').textContent=fmt(B.naqd); $('#zKarta').textContent=fmt(B.karta); $('#zJami').textContent=fmt(B.naqd+B.karta);
+  $('#zNaqdN').textContent='Naqd kirim/chiqim va o\'tkazmalar bilan'; $('#zKartaN').textContent='Plastik kirim/chiqim va o\'tkazmalar bilan';
+  $('#zAnchorN').textContent=B.anchor?`Oxirgi tuzatish: ${dmy(B.anchor.date)}`:'Hali tuzatish kiritilmagan';
+  $('#zBody').innerHTML=[...D.zahira].sort((a,b)=>a.ts<b.ts?1:-1).map(r=>r.turi==='otkazma'
+    ?`<tr><td>${dmy(r.date)}</td><td><span class="tag b-accent">🔁 O'tkazma</span></td><td>${r.dir==='karta_naqd'?'💳 Plastik → 💵 Naqd':'💵 Naqd → 💳 Plastik'}${r.note?' · <span style="color:var(--muted)">'+r.note+'</span>':''}</td><td class="num ${r.dir==='karta_naqd'?'c-green':'c-red'}">${r.dir==='karta_naqd'?'+':'−'}${fmt(r.sum)}</td><td class="num ${r.dir==='karta_naqd'?'c-red':'c-green'}">${r.dir==='karta_naqd'?'−':'+'}${fmt(r.sum)}</td><td><button class="del" data-del="zahira" data-id="${r.id}" aria-label="O'chirish">✕</button></td></tr>`
+    :`<tr><td>${dmy(r.date)}</td><td><span class="tag b-amber">✏️ Tuzatish</span></td><td style="color:var(--muted)">Haqiqiy qoldiq kiritildi</td><td class="num">${fmt(r.naqd)}</td><td class="num">${fmt(r.karta)}</td><td><button class="del" data-del="zahira" data-id="${r.id}" aria-label="O'chirish">✕</button></td></tr>`
+  ).join('')||`<tr><td colspan="6" class="empty">Hali yozuv yo'q — avval "Qoldiqni tuzatish" orqali hozirgi summani kiriting</td></tr>`;
 
   /* hisobot */
   $('#yearLbl').textContent=year;
@@ -622,9 +649,16 @@ $('#kAdd').onclick=()=>addEntry('kirim'); $('#cAdd').onclick=()=>addEntry('chiqi
 ['#cSum','#cNote'].forEach(s=>$(s).onkeydown=e=>{if(e.key==='Enter')addEntry('chiqim');});
 $('#zAdd').onclick=async()=>{
   const date=$('#zDate').value; if(!date) return toast('Sanani tanlang');
-  const {data,error}=await sb.from('zahira').insert({sana:date,naqd:+$('#zN').value||0,karta:+$('#zK').value||0}).select().single();
+  const {data,error}=await sb.from('zahira').insert({sana:date,turi:'tuzatish',naqd:+$('#zN').value||0,karta:+$('#zK').value||0}).select().single();
   if(error) return toast('Xato: '+error.message);
-  D.zahira.push(rowZ(data)); render(); toast('Zahira saqlandi');
+  D.zahira.push(rowZ(data)); $('#zN').value=$('#zK').value=''; render(); toast('Qoldiq tuzatildi');
+};
+$('#oAdd').onclick=async()=>{
+  const date=$('#oDate').value, sum=+$('#oSum').value;
+  if(!date) return toast('Sanani tanlang'); if(!(sum>0)) return toast('Summani kiriting');
+  const {data,error}=await sb.from('zahira').insert({sana:date,turi:'otkazma',yonalish:oDir,summa:sum,naqd:0,karta:0,izoh:$('#oNote').value.trim()}).select().single();
+  if(error) return toast('Xato: '+error.message);
+  D.zahira.push(rowZ(data)); $('#oSum').value=''; $('#oNote').value=''; render(); toast('O\'tkazma saqlandi: '+fmt(sum));
 };
 async function delRow(table,id){
   const {error}=await sb.from(table).delete().eq('id',id);
@@ -649,7 +683,7 @@ $('#impFile').onchange=e=>{
       busy(true);
       const K=j.kirim.map(x=>({sana:x.date,manba:x.src,summa:x.sum,izoh:x.note||'',tur:x.tur==='plastik'?'plastik':'naqd'}));
       const C=j.chiqim.map(x=>({sana:x.date,kategoriya:x.cat,summa:x.sum,izoh:x.note||'',tur:x.tur==='plastik'?'plastik':'naqd'}));
-      const Z=(j.zahira||[]).map(x=>({sana:x.date,naqd:x.naqd||0,karta:x.karta||0}));
+      const Z=(j.zahira||[]).map(x=>({sana:x.date,naqd:x.naqd||0,karta:x.karta||0,turi:x.turi==='otkazma'?'otkazma':'tuzatish',yonalish:x.dir||null,summa:x.sum||0,izoh:x.note||''}));
       for(const [t,rows] of [['kirim',K],['chiqim',C],['zahira',Z]]){ if(rows.length){const {error}=await sb.from(t).insert(rows); if(error) throw error;} }
       if(j.name||j.sources||j.cats){ if(j.name)D.name=j.name; if(j.sources)D.sources=j.sources; if(j.cats)D.cats=j.cats; migrate(); await saveProfil(); }
       await loadAll(); render(); toast('Ma\'lumot tiklandi');
@@ -665,7 +699,7 @@ $('#resetBtn').onclick=async()=>{
 };
 
 /* ================= INIT ================= */
-['#kDate','#cDate','#zDate'].forEach(s=>$(s).value=todayISO());
+['#kDate','#cDate','#zDate','#oDate'].forEach(s=>$(s).value=todayISO());
 if('serviceWorker' in navigator&&location.protocol.startsWith('http')){navigator.serviceWorker.register('sw.js').catch(()=>{});}
 render(); showLogin();
 </script>
